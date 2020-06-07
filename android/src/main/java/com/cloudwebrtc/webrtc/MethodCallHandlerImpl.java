@@ -66,6 +66,8 @@ import org.webrtc.SessionDescription.Type;
 import org.webrtc.VideoTrack;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
+import org.webrtc.voiceengine.WebRtcAudioManager;
+import org.webrtc.voiceengine.WebRtcAudioUtils;
 
 public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
 
@@ -124,7 +126,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
       return;
     }
 
-    PeerConnectionFactory.initialize(
+		PeerConnectionFactory.initialize(
         InitializationOptions.builder(context)
             .setEnableInternalTracer(true)
             .createInitializationOptions());
